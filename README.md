@@ -1,5 +1,7 @@
 ## My First App
 
+Fetches JSON from an REst API and renders it with React.
+
 In the project directory, you can run:
 
 ### `npm start`
