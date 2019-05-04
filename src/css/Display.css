@@ -1,0 +1,73 @@
+.loader {
+  border: 6px solid rgb(243, 243, 243);
+  border-top: 6px solid rgba(0, 119, 255);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  animation: loader 0.6s linear infinite;
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.containerLoader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10% auto;
+}
+
+.animePanel {
+  clear: both;
+  display: grid;
+  margin: auto 10%;
+}
+
+@media only screen and (max-width: 600px) {
+  .animePanel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .animePanel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .animePanel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .animePanel {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .animePanel {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .animePanel {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .animePanel {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
