@@ -8,6 +8,7 @@ export default class Sorting extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  // invoke onClick to set orderState
   handleClick(e) {
     this.props.onClick(e.target.name);
   }
@@ -15,6 +16,7 @@ export default class Sorting extends React.Component {
   render() {
     return (
       <div className="dropdown">
+        {/* fontawesome icon */}
         <i className="fas fa-bars fa-2x" />
         <div className="dropdownContent">
           <button

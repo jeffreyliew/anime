@@ -14,6 +14,7 @@ export default class Display extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  // function to fetch JSON from REST API to set data
   async componentDidMount() {
     let index = 0;
     const day = [
@@ -35,17 +36,18 @@ export default class Display extends React.Component {
 
       for (let i = 0; i < 7; i++) {
         this.setState({
-          data: this.state.data.concat(result[day[index]]),
-          isLoaded: true
+          data: this.state.data.concat(result[day[index]])
         });
         index++;
       }
+      this.setState({ isLoaded: true });
     } catch (err) {
       console.log(`Error: ${err}`);
       alert(`Error: ${err}`);
     }
   }
 
+  // set orderState
   handleChange(order) {
     this.setState({
       orderState: order
@@ -57,6 +59,7 @@ export default class Display extends React.Component {
     const data = this.state.data.slice();
     let animeData;
 
+    // sorts data depending on orderState
     if (orderState === "ascending") {
       animeData = data
         .sort((a, b) => a.score - b.score)
@@ -75,6 +78,7 @@ export default class Display extends React.Component {
       });
     }
 
+    // renders data if data isLoaded, otherwise it shows a loading circle
     return (
       <div>
         {isLoaded === true && (
