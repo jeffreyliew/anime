@@ -14,7 +14,7 @@ export default class Display extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // function to fetch JSON from REST API to set data
+  // fetch JSON from REST API to set data
   async componentDidMount() {
     let index = 0;
     const day = [
