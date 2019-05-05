@@ -1,6 +1,6 @@
 ## My First App
 
-Fetches JSON from a REst API and renders it with React.
+Fetches JSON from a REST API and renders it with React.
 
 In the project directory, you can run:
 
