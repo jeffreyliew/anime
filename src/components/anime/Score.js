@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Score.css";
+import "../../css/anime/Score.css";
 import PropTypes from "prop-types";
 
 export const Score = props => {

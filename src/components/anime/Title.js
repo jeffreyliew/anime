@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Title.css";
+import "../../css/anime/Title.css";
 import PropTypes from "prop-types";
 
 export const Title = props => {

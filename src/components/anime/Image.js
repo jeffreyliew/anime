@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Image.css";
+import "../../css/anime/Image.css";
 import PropTypes from "prop-types";
 
 export const Image = props => {
