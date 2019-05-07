@@ -1,3 +1,28 @@
+.containerDisplay {
+  display: grid;
+  grid-template-columns: repeat(23, 1fr) 50px;
+}
+
+.headerContainer {
+  grid-column: 1 / 25;
+}
+
+.sortingContainer {
+  grid-column: 24 / 25;
+}
+
+.contentContainer {
+  grid-column: 1 / 25;
+}
+
+.containerLoader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10% auto;
+}
+
 .loader {
   border: 6px solid rgb(243, 243, 243);
   border-top: 6px solid rgba(0, 119, 255);
@@ -16,16 +41,7 @@
   }
 }
 
-.containerLoader {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 10% auto;
-}
-
 .animePanel {
-  clear: both;
   display: grid;
   margin: auto 10%;
 }

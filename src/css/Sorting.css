@@ -1,16 +1,13 @@
 .dropdown {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  float: right;
   position: relative;
-  width: 3%;
-  margin: 10px 10px 0 0;
+  width: 30px;
+  margin: 10px;
 }
 
 .dropdownContent {
   position: absolute;
   top: 125%;
+  right: 0%;
   width: 100px;
   border: 1px solid rgb(97, 95, 95);
   border-radius: 4px;
@@ -26,11 +23,11 @@
   height: 0;
   border-top: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-bottom: 12px solid rgb(97, 95, 95);
+  border-bottom: 12px solid rgb(163, 163, 163);
   border-left: 12px solid transparent;
   position: absolute;
   bottom: 100%;
-  left: 74%;
+  right: 3.5%;
   margin: 0;
 }
 

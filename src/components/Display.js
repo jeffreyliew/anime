@@ -81,23 +81,29 @@ export default class Display extends React.Component {
 
     // renders data if data isLoaded, otherwise it shows a loading circle
     return (
-      <div>
-        <Header />
-        {isLoaded === true && (
-          <Sorting orderState={orderState} onClick={this.handleChange} />
-        )}
-        {
-          <div className={isLoaded ? "animePanel" : ""}>
-            {isLoaded ? (
-              animeData
-            ) : (
-              <div className="containerLoader">
-                <div className="loader" />
-                <h2>Loading...</h2>
-              </div>
-            )}
-          </div>
-        }
+      <div className="containerDisplay">
+        <div className="headerContainer">
+          <Header />
+        </div>
+        <div className="sortingContainer">
+          {isLoaded === true && (
+            <Sorting orderState={orderState} onClick={this.handleChange} />
+          )}
+        </div>
+        <div className="contentContainer">
+          {
+            <div className={isLoaded ? "animePanel" : ""}>
+              {isLoaded ? (
+                animeData
+              ) : (
+                <div className="containerLoader">
+                  <div className="loader" />
+                  <h2>Loading...</h2>
+                </div>
+              )}
+            </div>
+          }
+        </div>
       </div>
     );
   }
