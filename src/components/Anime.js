@@ -1,8 +1,8 @@
 import React from "react";
-import { Image } from "./Image";
-import { Title } from "./Title";
-import { Score } from "./Score";
-import { Link } from "./Link";
+import { Image } from "./anime/Image";
+import { Title } from "./anime/Title";
+import { Score } from "./anime/Score";
+import { Link } from "./anime/Link";
 import "../css/Anime.css";
 import PropTypes from "prop-types";
 
