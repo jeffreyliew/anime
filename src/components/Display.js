@@ -2,6 +2,7 @@ import React from "react";
 import "../css/Display.css";
 import { Anime } from "./Anime";
 import Sorting from "./Sorting";
+import { Header } from "./Header";
 
 export default class Display extends React.Component {
   constructor(props) {
@@ -81,6 +82,7 @@ export default class Display extends React.Component {
     // renders data if data isLoaded, otherwise it shows a loading circle
     return (
       <div>
+        <Header />
         {isLoaded === true && (
           <Sorting orderState={orderState} onClick={this.handleChange} />
         )}
