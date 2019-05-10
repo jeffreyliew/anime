@@ -5,6 +5,13 @@
 
 .headerContainer {
   grid-column: 1 / 25;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.filterContainer {
+  grid-column: 1 / 24;
 }
 
 .sortingContainer {
