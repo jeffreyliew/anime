@@ -3,6 +3,7 @@ import "../css/Display.css";
 import { Anime } from "./Anime";
 import Sorting from "./Sorting";
 import { Header } from "./Header";
+import { Input } from "./Input";
 
 export default class Display extends React.Component {
   constructor(props) {
@@ -85,11 +86,19 @@ export default class Display extends React.Component {
         <div className="headerContainer">
           <Header />
         </div>
-        <div className="sortingContainer">
-          {isLoaded === true && (
+
+        {isLoaded && (
+          <div className="filterContainer">
+            <Input />
+          </div>
+        )}
+
+        {isLoaded && (
+          <div className="sortingContainer">
             <Sorting orderState={orderState} onClick={this.handleChange} />
-          )}
-        </div>
+          </div>
+        )}
+
         <div className="contentContainer">
           {
             <div className={isLoaded ? "animePanel" : ""}>

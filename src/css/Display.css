@@ -12,6 +12,7 @@
 
 .filterContainer {
   grid-column: 1 / 24;
+  position: relative;
 }
 
 .sortingContainer {
