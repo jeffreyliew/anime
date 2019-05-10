@@ -23,30 +23,30 @@
 .containerAnime {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1.8fr 9fr 1fr;
+  grid-template-rows: 1.8fr 11fr 1fr;
+  height: 350px;
+  width: 100%;
 }
 
 .titleContainer {
   grid-area: 1 / 1 / 2 / 3;
-  height: 100%;
-  width: 100%;
+  background-color: rgba(5, 5, 5);
+  position: relative;
 }
 
 .imageContainer {
   grid-area: 2 / 1 / 3 / 3;
   position: relative;
-  width: 100%;
-  height: 100%;
 }
 
 .scoreContainer {
   grid-area: 3 / 1 / 4 / 2;
-  width: 100%;
-  height: 100%;
+  background-color: rgb(27, 27, 27);
+  position: relative;
 }
 
 .linkContainer {
   grid-area: 3 / 2 / 4 / 3;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  background-color: rgb(53, 52, 52);
 }
