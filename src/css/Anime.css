@@ -23,8 +23,8 @@
 .containerAnime {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1.8fr 11fr 1fr;
-  height: 350px;
+  grid-template-rows: 2.1fr 11fr 1fr;
+  height: 360px;
   width: 100%;
 }
 
