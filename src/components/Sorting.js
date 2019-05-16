@@ -5,11 +5,11 @@ import PropTypes from "prop-types";
 export default class Sorting extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.onOrderChange = this.onOrderChange.bind(this);
   }
 
   // invoke onClick to set orderState
-  handleClick(e) {
+  onOrderChange(e) {
     this.props.onClick(e.target.name);
   }
 
@@ -21,21 +21,21 @@ export default class Sorting extends React.Component {
         <div className="dropdownContent">
           <button
             className={this.props.orderState === "default" ? "active" : ""}
-            onClick={this.handleClick}
+            onClick={this.onOrderChange}
             name="default"
           >
             Default
           </button>
           <button
             className={this.props.orderState === "ascending" ? "active" : ""}
-            onClick={this.handleClick}
+            onClick={this.onOrderChange}
             name="ascending"
           >
             Score Ascending
           </button>
           <button
             className={this.props.orderState === "descending" ? "active" : ""}
-            onClick={this.handleClick}
+            onClick={this.onOrderChange}
             name="descending"
           >
             Score Descending
