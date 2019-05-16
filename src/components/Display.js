@@ -3,7 +3,7 @@ import "../css/Display.css";
 import { Anime } from "./Anime";
 import Sorting from "./Sorting";
 import { Header } from "./Header";
-import { Input } from "./Input";
+import Filter from "./Filter";
 
 export default class Display extends React.Component {
   constructor(props) {
@@ -11,9 +11,11 @@ export default class Display extends React.Component {
     this.state = {
       data: [],
       isLoaded: false,
-      orderState: "default"
+      orderState: "default",
+      filter: ""
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleOrderChange = this.handleOrderChange.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   // fetch JSON from REST API to set data
@@ -49,15 +51,23 @@ export default class Display extends React.Component {
     }
   }
 
-  // set orderState
-  handleChange(order) {
+  // set order by user click
+  handleOrderChange(order) {
     this.setState({
       orderState: order
     });
   }
 
+  // filter anime by user input
+  handleFilterChange(filter) {
+    this.setState({
+      filter: filter
+    });
+  }
+
   render() {
     const { orderState, isLoaded } = this.state;
+    const filter = this.state.filter.toLowerCase();
     const data = this.state.data.slice();
     let animeData;
 
@@ -66,16 +76,25 @@ export default class Display extends React.Component {
       animeData = data
         .sort((a, b) => a.score - b.score)
         .map(anime => {
+          if (anime.title.toLowerCase().indexOf(filter) === -1) {
+            return null;
+          }
           return <Anime key={anime.mal_id} anime={anime} />;
         });
     } else if (orderState === "descending") {
       animeData = data
         .sort((a, b) => b.score - a.score)
         .map(anime => {
+          if (anime.title.toLowerCase().indexOf(filter) === -1) {
+            return null;
+          }
           return <Anime key={anime.mal_id} anime={anime} />;
         });
     } else {
       animeData = data.map(anime => {
+        if (anime.title.toLowerCase().indexOf(filter) === -1) {
+          return null;
+        }
         return <Anime key={anime.mal_id} anime={anime} />;
       });
     }
@@ -89,13 +108,16 @@ export default class Display extends React.Component {
 
         {isLoaded && (
           <div className="filterContainer">
-            <Input />
+            <Filter
+              filter={this.state.filter}
+              onFilterChange={this.handleFilterChange}
+            />
           </div>
         )}
 
         {isLoaded && (
           <div className="sortingContainer">
-            <Sorting orderState={orderState} onClick={this.handleChange} />
+            <Sorting orderState={orderState} onClick={this.handleOrderChange} />
           </div>
         )}
 
