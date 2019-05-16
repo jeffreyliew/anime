@@ -1,0 +1,67 @@
+.filter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+
+  padding: 5px;
+  padding-left: 8px;
+
+  margin-left: 24px;
+
+  transition: 0.3s ease;
+}
+
+.filter:focus {
+  border-color: rgb(25, 94, 117);
+}
+
+.filter::placeholder {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+  .filter {
+    width: 100%;
+    margin-left: 4px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .filter {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .filter {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .filter {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .filter {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .filter {
+    width: 27.5%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .filter {
+    width: 25%;
+  }
+}
