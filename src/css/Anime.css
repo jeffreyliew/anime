@@ -29,7 +29,7 @@
 
 .titleContainer {
   grid-area: 1 / 1 / 2 / 3;
-  background-color: rgba(5, 5, 5);
+  background: linear-gradient(to bottom, rgba(5, 5, 5), rgba(5, 5, 5, 0.8) 90%);
   position: relative;
 }
 
