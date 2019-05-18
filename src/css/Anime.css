@@ -3,13 +3,12 @@
 }
 
 .parentContainerAnime {
-  padding: 5px;
   width: 100%;
   transition: 0.3s ease;
 }
 
 .parentContainerAnime:hover {
-  box-shadow: 1px 1px 50px 2px grey;
+  box-shadow: 5px 5px 20px 5px grey;
   transform: scale(1.02);
 }
 

@@ -51,6 +51,7 @@
 
 .animePanel {
   display: grid;
+  grid-gap: 10px;
   margin: auto 10%;
 }
 
