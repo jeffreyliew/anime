@@ -17,7 +17,7 @@ export default class Sorting extends React.Component {
     return (
       <div className="dropdown">
         {/* fontawesome icon */}
-        <i className="fas fa-bars fa-2x" />
+        <i className="fas fa-sort fa-2x" />
         <div className="dropdownContent">
           <button
             className={this.props.orderState === "default" ? "active" : ""}
