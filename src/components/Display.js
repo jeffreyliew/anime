@@ -4,6 +4,7 @@ import { Anime } from "./Anime";
 import Sorting from "./Sorting";
 import { Header } from "./Header";
 import Filter from "./Filter";
+import { determineOrder } from "../util.js";
 
 export default class Display extends React.Component {
   constructor(props) {
@@ -72,26 +73,15 @@ export default class Display extends React.Component {
     let animeData;
 
     // sorts data depending on orderState
-    if (orderState === "ascending") {
-      animeData = data
-        .sort((a, b) => a.score - b.score)
-        .map(anime => {
-          if (anime.title.toLowerCase().indexOf(filter) === -1) {
-            return null;
-          }
-          return <Anime key={anime.mal_id} anime={anime} />;
-        });
-    } else if (orderState === "descending") {
-      animeData = data
-        .sort((a, b) => b.score - a.score)
-        .map(anime => {
-          if (anime.title.toLowerCase().indexOf(filter) === -1) {
-            return null;
-          }
-          return <Anime key={anime.mal_id} anime={anime} />;
-        });
-    } else {
+    if (orderState === "default") {
       animeData = data.map(anime => {
+        if (anime.title.toLowerCase().indexOf(filter) === -1) {
+          return null;
+        }
+        return <Anime key={anime.mal_id} anime={anime} />;
+      });
+    } else {
+      animeData = data.sort(determineOrder(orderState)).map(anime => {
         if (anime.title.toLowerCase().indexOf(filter) === -1) {
           return null;
         }
