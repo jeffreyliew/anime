@@ -4,7 +4,7 @@ import { Anime } from "./Anime";
 import Sorting from "./Sorting";
 import { Header } from "./Header";
 import Filter from "./Filter";
-import { determineOrder } from "../util.js";
+import { determineOrder } from "../utils";
 
 export default class Display extends React.Component {
   constructor(props) {
