@@ -98,10 +98,7 @@ export default class Display extends React.Component {
 
         {isLoaded && (
           <div className="filterContainer">
-            <Filter
-              filter={this.state.filter}
-              onFilterChange={this.handleFilterChange}
-            />
+            <Filter onFilterChange={this.handleFilterChange} />
           </div>
         )}
 

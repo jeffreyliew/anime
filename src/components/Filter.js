@@ -5,11 +5,21 @@ import PropTypes from "prop-types";
 export default class Filter extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      filter: ""
+    };
     this.filterChange = this.filterChange.bind(this);
   }
 
   filterChange(e) {
-    this.props.onFilterChange(e.target.value);
+    const evt = e.target.value;
+    this.setState({ filter: evt });
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+    this.timer = setTimeout(() => {
+      this.props.onFilterChange(evt);
+    }, 180);
   }
 
   render() {
@@ -18,7 +28,7 @@ export default class Filter extends React.Component {
         className="filter"
         type="text"
         name="search"
-        value={this.props.filter}
+        value={this.state.filter}
         onChange={this.filterChange}
         placeholder="Search"
       />
@@ -27,6 +37,5 @@ export default class Filter extends React.Component {
 }
 
 Filter.propTypes = {
-  filter: PropTypes.string,
   onFilterChange: PropTypes.func
 };
