@@ -6,7 +6,7 @@
 
 .containerDisplay {
   display: grid;
-  grid-template-columns: repeat(23, 1fr) 50px;
+  grid-template-columns: repeat(23, 1fr) 40px;
 }
 
 .headerContainer {
@@ -21,7 +21,7 @@
   position: relative;
 }
 
-.sortingContainer {
+.orderContainer {
   grid-column: 24 / 25;
 }
 
