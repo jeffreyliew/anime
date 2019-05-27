@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import "../css/Filter.css";
 import PropTypes from "prop-types";
 
-export default class Filter extends React.Component {
+export default class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = {
