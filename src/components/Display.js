@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../css/Display.css";
 import { Anime } from "./Anime";
 import Order from "./Order";
-import { Header } from "./Header";
 import Filter from "./Filter";
 import { determineOrder } from "../utils";
 import { setOrder } from "../actions/order";
@@ -58,23 +57,19 @@ class Display extends Component {
     // renders data if data loading, otherwise it shows a loading circle
     return (
       <div className="containerDisplay">
-        <div className="headerContainer">
-          <Header />
-        </div>
-
         {!loading && (
-          <div className="filterContainer">
+          <div className="containerFilter">
             <Filter onFilterChange={this.handleFilterChange} />
           </div>
         )}
 
         {!loading && (
-          <div className="orderContainer">
+          <div className="containerOrder">
             <Order onClick={this.handleOrderChange} />
           </div>
         )}
 
-        <div className="contentContainer">
+        <div className="containerContent">
           {
             <div className={loading ? "" : "animePanel"}>
               {loading ? (

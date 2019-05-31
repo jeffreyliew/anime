@@ -1,31 +1,18 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .containerDisplay {
   display: grid;
   grid-template-columns: repeat(23, 1fr) 40px;
 }
 
-.headerContainer {
-  grid-column: 1 / 25;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-.filterContainer {
+.containerFilter {
   grid-column: 1 / 24;
   position: relative;
 }
 
-.orderContainer {
+.containerOrder {
   grid-column: 24 / 25;
 }
 
-.contentContainer {
+.containerContent {
   grid-column: 1 / 25;
 }
 

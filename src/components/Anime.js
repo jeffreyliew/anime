@@ -10,16 +10,16 @@ export const Anime = props => {
   return (
     <div className="parentContainerAnime">
       <div className="containerAnime">
-        <div className="titleContainer">
+        <div className="containerTitle">
           <Title title={props.anime.title} />
         </div>
-        <div className="imageContainer">
+        <div className="containerImage">
           <Image src={props.anime.image_url} alt={props.anime.title} />
         </div>
-        <div className="scoreContainer">
+        <div className="containerScore">
           <Score score={props.anime.score} />
         </div>
-        <div className="linkContainer">
+        <div className="containerLink">
           <Link link={props.anime.url} />
         </div>
       </div>
