@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/Order.css";
+import "../css/order.css";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 

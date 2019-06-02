@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/Filter.css";
+import "../css/filter.css";
 import PropTypes from "prop-types";
 
 export default class Filter extends Component {

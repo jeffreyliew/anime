@@ -3,7 +3,7 @@ import { Image } from "./anime/Image";
 import { Title } from "./anime/Title";
 import { Score } from "./anime/Score";
 import { Link } from "./anime/Link";
-import "../css/Anime.css";
+import "../css/anime.css";
 import PropTypes from "prop-types";
 
 export const Anime = props => {

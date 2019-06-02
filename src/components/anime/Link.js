@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/anime/Link.css";
+import "../../css/anime/link.css";
 import PropTypes from "prop-types";
 
 export const Link = props => {
