@@ -56,33 +56,25 @@ class Display extends Component {
 
     // renders data if data loading, otherwise it shows a loading circle
     return (
-      <div className="containerDisplay">
-        {!loading && (
-          <div className="containerFilter">
-            <Filter onFilterChange={this.handleFilterChange} />
-          </div>
-        )}
-
-        {!loading && (
-          <div className="containerOrder">
-            <Order onClick={this.handleOrderChange} />
-          </div>
-        )}
-
-        <div className="containerContent">
-          {
-            <div className={loading ? "" : "animePanel"}>
-              {loading ? (
-                <div className="containerLoader">
-                  <div className="loader" />
-                  <h2>Loading...</h2>
-                </div>
-              ) : (
-                animeData
-              )}
+      <div>
+        {!loading ? (
+          <div className="containerDisplay">
+            <div className="containerFilter">
+              <Filter onFilterChange={this.handleFilterChange} />
             </div>
-          }
-        </div>
+            <div className="containerOrder">
+              <Order onClick={this.handleOrderChange} />
+            </div>
+            <div className="containerContent">
+              <div className="animePanel">{animeData}</div>
+            </div>
+          </div>
+        ) : (
+          <div className="containerLoader">
+            <div className="loader" />
+            <h2>Loading...</h2>
+          </div>
+        )}
       </div>
     );
   }
