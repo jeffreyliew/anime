@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/Display.css";
+import "../css/display.css";
 import { Anime } from "./Anime";
 import Order from "./Order";
 import Filter from "./Filter";
@@ -8,6 +8,7 @@ import { setOrder } from "../actions/order";
 import { handleInitialData } from "../actions/data";
 import { setFilter } from "../actions/filter";
 import { connect } from "react-redux";
+import BackToTop from "./BackToTop";
 
 class Display extends Component {
   constructor(props) {
@@ -68,6 +69,7 @@ class Display extends Component {
             <div className="containerContent">
               <div className="animePanel">{animeData}</div>
             </div>
+            <BackToTop />
           </div>
         ) : (
           <div className="containerLoader">

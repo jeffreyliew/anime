@@ -42,7 +42,7 @@
   height: 100%;
   border: none;
   color: rgb(129, 127, 127);
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .dropdownContent button:hover {

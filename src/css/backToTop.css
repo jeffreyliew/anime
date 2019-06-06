@@ -1,0 +1,18 @@
+.backToTop {
+  position: fixed;
+  display: none;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  padding: 5px 5.625px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.backToTop:hover {
+  background-color: rgb(86, 169, 247);
+}
+
+.backToTop:hover i {
+  color: white;
+}
