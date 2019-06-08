@@ -1,12 +1,12 @@
 import React from "react";
-import "../../css/anime/link.css";
+import "../../css/anime/detail.css";
 import PropTypes from "prop-types";
 
-export const Link = props => {
+export const Detail = props => {
   return (
     <a
-      className="link"
-      href={props.link}
+      className="detail"
+      href={props.detail}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -15,6 +15,6 @@ export const Link = props => {
   );
 };
 
-Link.propTypes = {
-  link: PropTypes.string
+Detail.propTypes = {
+  detail: PropTypes.string
 };

@@ -1,4 +1,4 @@
-.link {
+.detail {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-weight: 600;
@@ -8,7 +8,7 @@
   transform: translate(-50%, -50%);
 }
 
-a:hover {
+.detail:hover {
   text-decoration: underline;
   color: rgb(221, 217, 217);
 }
