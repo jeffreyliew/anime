@@ -2,25 +2,29 @@ import React from "react";
 import { Image } from "./anime/Image";
 import { Title } from "./anime/Title";
 import { Score } from "./anime/Score";
-import { Link } from "./anime/Link";
 import "../css/anime.css";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export const Anime = props => {
+  const { title, image_url, score, mal_id } = props.anime;
+
   return (
     <div className="parentContainerAnime">
       <div className="containerAnime">
         <div className="containerTitle">
-          <Title title={props.anime.title} />
+          <Title title={title} />
         </div>
         <div className="containerImage">
-          <Image src={props.anime.image_url} alt={props.anime.title} />
+          <Image src={image_url} alt={title} />
         </div>
         <div className="containerScore">
-          <Score score={props.anime.score} />
+          <Score score={score} />
         </div>
         <div className="containerLink">
-          <Link link={props.anime.url} />
+          <Link to={`/${mal_id}`}>
+            <div className="link">Details</div>
+          </Link>
         </div>
       </div>
     </div>
@@ -32,6 +36,6 @@ Anime.propTypes = {
     title: PropTypes.string,
     image_url: PropTypes.string,
     score: PropTypes.number,
-    url: PropTypes.string
+    mal_id: PropTypes.number
   })
 };

@@ -6,7 +6,7 @@ export default class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: ""
+      filter: props.initialFilter
     };
     this.filterChange = this.filterChange.bind(this);
   }

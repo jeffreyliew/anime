@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../css/backToTop.css";
+import PropTypes from "prop-types";
 
 export default class BackToTop extends Component {
   constructor(props) {
@@ -27,8 +28,9 @@ export default class BackToTop extends Component {
       document.body.scrollTop;
 
     const { visible } = this.state;
+    const { showAt } = this.props;
 
-    if (yOffSet > 410) {
+    if (yOffSet > showAt) {
       if (visible) {
         return;
       }
@@ -42,14 +44,14 @@ export default class BackToTop extends Component {
   }
 
   onClickHandler() {
-    let scroll = 250;
+    const { scroll, delay } = this.props;
 
     let timer = setInterval(() => {
       if (window.pageYOffset === 0) {
         clearInterval(this.state.timer);
       }
       window.scrollTo(0, window.pageYOffset - scroll);
-    }, 13);
+    }, delay);
     this.setState({ timer: timer });
   }
 
@@ -65,3 +67,9 @@ export default class BackToTop extends Component {
     );
   }
 }
+
+BackToTop.propTypes = {
+  scroll: PropTypes.number,
+  delay: PropTypes.number,
+  showAt: PropTypes.number
+};

@@ -5,7 +5,6 @@ import Order from "./Order";
 import Filter from "./Filter";
 import { determineOrder } from "../utils";
 import { setOrder } from "../actions/order";
-import { handleInitialData } from "../actions/data";
 import { setFilter } from "../actions/filter";
 import { connect } from "react-redux";
 import BackToTop from "./BackToTop";
@@ -15,11 +14,6 @@ class Display extends Component {
     super(props);
     this.handleOrderChange = this.handleOrderChange.bind(this);
     this.handleFilterChange = this.handleFilterChange.bind(this);
-  }
-
-  // fetch JSON from REST API to set data
-  componentDidMount() {
-    this.props.dispatch(handleInitialData());
   }
 
   // set order by user click
@@ -61,7 +55,10 @@ class Display extends Component {
         {!loading ? (
           <div className="containerDisplay">
             <div className="containerFilter">
-              <Filter onFilterChange={this.handleFilterChange} />
+              <Filter
+                initialFilter={filter}
+                onFilterChange={this.handleFilterChange}
+              />
             </div>
             <div className="containerOrder">
               <Order onClick={this.handleOrderChange} />
@@ -69,7 +66,7 @@ class Display extends Component {
             <div className="containerContent">
               <div className="animePanel">{animeData}</div>
             </div>
-            <BackToTop />
+            <BackToTop scroll={250} delay={13} showAt={410} />
           </div>
         ) : (
           <div className="containerLoader">
