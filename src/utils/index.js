@@ -1,7 +1,7 @@
 export function determineOrder(order) {
-  if (order === "ascending") {
+  if (order === "ScoreAscending") {
     return (a, b) => a.score - b.score;
-  } else if (order === "descending") {
+  } else if (order === "ScoreDescending") {
     return (a, b) => b.score - a.score;
   }
 }

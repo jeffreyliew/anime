@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 export const Header = props => {
   return (
     <div className="header">
-      <div className="homeButton">
-        <Link to="/" style={{ color: "white" }}>
+      <div className="header__home-button">
+        <Link to="/" style={{ color: "white", outline: "none" }}>
           <i className="fas fa-home fa-2x" />
         </Link>
       </div>
-      <div className="headerText">
+      <div className="header__text">
         <h1>{props.header}</h1>
       </div>
     </div>

@@ -1,22 +1,22 @@
-.containerDisplay {
+.display {
   display: grid;
   grid-template-columns: repeat(23, 1fr) 40px;
 }
 
-.containerFilter {
+.display__filter {
   grid-column: 1 / 24;
   position: relative;
 }
 
-.containerOrder {
+.display__order {
   grid-column: 24 / 25;
 }
 
-.containerContent {
+.display__content {
   grid-column: 1 / 25;
 }
 
-.containerLoader {
+.container-loader {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,50 +42,50 @@
   }
 }
 
-.animePanel {
+.anime-panel {
   display: grid;
   grid-gap: 10px;
   margin: auto 10% 5%;
 }
 
 @media only screen and (max-width: 600px) {
-  .animePanel {
+  .anime-panel {
     grid-template-columns: 1fr;
   }
 }
 
 @media only screen and (min-width: 600px) {
-  .animePanel {
+  .anime-panel {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .animePanel {
+  .anime-panel {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media only screen and (min-width: 992px) {
-  .animePanel {
+  .anime-panel {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media only screen and (min-width: 1300px) {
-  .animePanel {
+  .anime-panel {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 
 @media only screen and (min-width: 1500px) {
-  .animePanel {
+  .anime-panel {
     grid-template-columns: repeat(6, 1fr);
   }
 }
 
 @media only screen and (min-width: 1800px) {
-  .animePanel {
+  .anime-panel {
     grid-template-columns: repeat(7, 1fr);
   }
 }

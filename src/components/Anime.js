@@ -10,22 +10,20 @@ export const Anime = props => {
   const { title, image_url, score, mal_id } = props.anime;
 
   return (
-    <div className="parentContainerAnime">
-      <div className="containerAnime">
-        <div className="containerTitle">
-          <Title title={title} />
-        </div>
-        <div className="containerImage">
-          <Image src={image_url} alt={title} />
-        </div>
-        <div className="containerScore">
-          <Score score={score} />
-        </div>
-        <div className="containerLink">
-          <Link to={`/${mal_id}`}>
-            <div className="link">Details</div>
-          </Link>
-        </div>
+    <div className="anime">
+      <div className="anime__title-container">
+        <Title title={title} />
+      </div>
+      <div className="anime__image-container">
+        <Image src={image_url} alt={title} />
+      </div>
+      <div className="anime__score-container">
+        <Score score={score} />
+      </div>
+      <div className="anime__link-container">
+        <Link to={`/${mal_id}`} style={{ outline: "none" }}>
+          <div className="anime__link">Details</div>
+        </Link>
       </div>
     </div>
   );

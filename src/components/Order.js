@@ -11,37 +11,39 @@ class Order extends Component {
 
   // invoke onClick to set order
   onOrderChange(e) {
-    this.props.onClick(e.target.name);
+    this.props.onClick(e.target.textContent.replace(/\s/g, ""));
   }
 
   render() {
     const { order } = this.props;
     return (
-      <div className="dropdown">
-        {/* fontawesome icon */}
+      <div className="order-dropdown">
         <i className="fas fa-sort fa-2x" />
-        <div className="dropdownContent">
-          <button
-            className={order === "default" ? "active" : ""}
+        <div className="order-dropdown__content">
+          <div
+            className={`order-dropdown__btn ${
+              order === "Default" ? "active" : ""
+            }`}
             onClick={this.onOrderChange}
-            name="default"
           >
             Default
-          </button>
-          <button
-            className={order === "ascending" ? "active" : ""}
+          </div>
+          <div
+            className={`order-dropdown__btn ${
+              order === "ScoreAscending" ? "active" : ""
+            }`}
             onClick={this.onOrderChange}
-            name="ascending"
           >
             Score Ascending
-          </button>
-          <button
-            className={order === "descending" ? "active" : ""}
+          </div>
+          <div
+            className={`order-dropdown__btn ${
+              order === "ScoreDescending" ? "active" : ""
+            }`}
             onClick={this.onOrderChange}
-            name="descending"
           >
             Score Descending
-          </button>
+          </div>
         </div>
       </div>
     );

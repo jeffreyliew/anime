@@ -1,53 +1,49 @@
-.parentContainerAnime {
-  width: 100%;
-  transition: 0.3s ease;
-}
-
-.parentContainerAnime:hover {
-  box-shadow: 5px 5px 20px 5px rgb(182, 181, 181);
-  transform: scale(1.02);
-}
-
-@media only screen and (max-width: 600px) {
-  .parentContainerAnime {
-    margin: auto;
-    width: 235px;
-  }
-}
-
-.containerAnime {
+.anime {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 2.1fr 11fr 1fr;
   height: 360px;
   width: 100%;
+  transition: 0.3s ease;
 }
 
-.containerTitle {
+@media only screen and (max-width: 600px) {
+  .anime {
+    margin: auto;
+    width: 235px;
+  }
+}
+
+.anime:hover {
+  box-shadow: 5px 5px 20px 5px rgb(182, 181, 181);
+  transform: scale(1.02);
+}
+
+.anime__title-container {
   grid-area: 1 / 1 / 2 / 3;
   background: linear-gradient(to bottom, rgba(5, 5, 5), rgba(5, 5, 5, 0.8) 90%);
   position: relative;
 }
 
-.containerImage {
+.anime__image-container {
   grid-area: 2 / 1 / 3 / 3;
   position: relative;
 }
 
-.containerScore {
+.anime__score-container {
   grid-area: 3 / 1 / 4 / 2;
   background-color: rgb(43, 42, 42);
   border-right: 1px solid rgb(83, 83, 83);
   position: relative;
 }
 
-.containerLink {
+.anime__link-container {
   grid-area: 3 / 2 / 4 / 3;
   position: relative;
   background-color: rgb(43, 42, 42);
 }
 
-.link {
+.anime__link {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-weight: 600;
@@ -57,7 +53,7 @@
   transform: translate(-50%, -50%);
 }
 
-.link:hover {
+.anime__link:hover {
   text-decoration: underline;
   color: rgb(221, 217, 217);
 }

@@ -33,7 +33,7 @@ class Display extends Component {
     let animeData;
 
     // sorts data depending on order
-    if (order === "default") {
+    if (order === "Default") {
       animeData = tempData.map(anime => {
         if (anime.title.toLowerCase().indexOf(tempFilter) === -1) {
           return null;
@@ -53,23 +53,23 @@ class Display extends Component {
     return (
       <div>
         {!loading ? (
-          <div className="containerDisplay">
-            <div className="containerFilter">
+          <div className="display">
+            <div className="display__filter">
               <Filter
                 initialFilter={filter}
                 onFilterChange={this.handleFilterChange}
               />
             </div>
-            <div className="containerOrder">
+            <div className="display__order">
               <Order onClick={this.handleOrderChange} />
             </div>
-            <div className="containerContent">
-              <div className="animePanel">{animeData}</div>
+            <div className="display__content">
+              <div className="anime-panel">{animeData}</div>
             </div>
             <BackToTop scroll={250} delay={13} showAt={410} />
           </div>
         ) : (
-          <div className="containerLoader">
+          <div className="container-loader">
             <div className="loader" />
             <h2>Loading...</h2>
           </div>
