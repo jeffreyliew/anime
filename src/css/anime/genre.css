@@ -1,0 +1,9 @@
+.genre {
+  background-color: rgb(74, 177, 177);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 3%;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: default;
+}

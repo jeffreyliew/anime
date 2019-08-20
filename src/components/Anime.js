@@ -8,22 +8,26 @@ import { Link } from "react-router-dom";
 
 export const Anime = props => {
   const { title, image_url, score, mal_id } = props.anime;
+  const fontColor = { color: "white" };
 
   return (
     <div className="anime">
-      <div className="anime__title-container">
-        <Title title={title} />
-      </div>
       <div className="anime__image-container">
-        <Image src={image_url} alt={title} />
+        <Link to={`/${mal_id}`} style={{ outline: "none", ...fontColor }}>
+          <Image src={image_url} alt={title} />
+        </Link>
+      </div>
+      <div className="anime__title-container">
+        <Link to={`/${mal_id}`} style={{ outline: "none" }}>
+          <Title
+            style={fontColor}
+            title={title}
+            text={title.length > 23 ? `${title.substring(0, 23)} ...` : title}
+          />
+        </Link>
       </div>
       <div className="anime__score-container">
-        <Score score={score} />
-      </div>
-      <div className="anime__link-container">
-        <Link to={`/${mal_id}`} style={{ outline: "none" }}>
-          <div className="anime__link">Details</div>
-        </Link>
+        <Score style={fontColor} score={score} />
       </div>
     </div>
   );

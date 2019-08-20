@@ -1,11 +1,11 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 5;
   width: 100%;
   margin: 0;
   padding: 20px;
-  background-color: rgb(35, 36, 46);
+  background-color: rgb(16, 16, 16);
   color: rgb(255, 255, 255);
   transition: 0.3s linear;
 
@@ -16,6 +16,7 @@
 .header__home-button {
   grid-area: 1 / 1 / 2 / 2;
   position: relative;
+  z-index: 6;
 }
 
 .header__home-button i {
@@ -28,11 +29,16 @@
 .header__text {
   grid-area: 1 / 1 / 2 / 3;
   text-align: center;
+  z-index: 5;
 }
 
 @media only screen and (max-width: 600px) {
   .header {
     font-size: 12px;
     padding: 15px;
+  }
+
+  .header__text {
+    padding-left: 25px;
   }
 }

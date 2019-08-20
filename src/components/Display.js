@@ -17,8 +17,12 @@ class Display extends Component {
   }
 
   // set order by user click
-  handleOrderChange(order) {
-    this.props.dispatch(setOrder(order));
+  handleOrderChange(newOrder) {
+    const { order } = this.props;
+    if (newOrder === order) {
+      return;
+    }
+    this.props.dispatch(setOrder(newOrder));
   }
 
   // filter anime by user input
@@ -34,22 +38,25 @@ class Display extends Component {
 
     // sorts data depending on order
     if (order === "Default") {
-      animeData = tempData.map(anime => {
-        if (anime.title.toLowerCase().indexOf(tempFilter) === -1) {
-          return null;
-        }
-        return <Anime key={anime.mal_id} anime={anime} />;
-      });
+      animeData = tempData
+        .filter(
+          anime =>
+            anime.title.toLowerCase().substring(0, tempFilter.length) ===
+            tempFilter
+        )
+        .map(anime => <Anime key={anime.mal_id} anime={anime} />);
     } else {
-      animeData = tempData.sort(determineOrder(order)).map(anime => {
-        if (anime.title.toLowerCase().indexOf(tempFilter) === -1) {
-          return null;
-        }
-        return <Anime key={anime.mal_id} anime={anime} />;
-      });
+      animeData = tempData
+        .filter(
+          anime =>
+            anime.title.toLowerCase().substring(0, tempFilter.length) ===
+            tempFilter
+        )
+        .sort(determineOrder(order))
+        .map(anime => <Anime key={anime.mal_id} anime={anime} />);
     }
 
-    // renders data if data loading, otherwise it shows a loading circle
+    // renders data, otherwise it shows a loading circle
     return (
       <div>
         {!loading ? (
@@ -64,7 +71,20 @@ class Display extends Component {
               <Order onClick={this.handleOrderChange} />
             </div>
             <div className="display__content">
-              <div className="anime-panel">{animeData}</div>
+              {animeData.length > 0 ? (
+                <div className="anime-panel">{animeData}</div>
+              ) : (
+                <div
+                  style={{
+                    color: "white",
+                    textAlign: "center",
+                    paddingTop: "20px",
+                    fontWeight: "bold"
+                  }}
+                >
+                  No results
+                </div>
+              )}
             </div>
             <BackToTop scroll={250} delay={13} showAt={410} />
           </div>

@@ -3,16 +3,19 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid lightgrey;
+  border: 2px solid rgb(55, 55, 55);
   border-radius: 5px;
   padding: 5px;
   padding-left: 8px;
   margin-left: 24px;
-  transition: 0.3s ease-out;
+  transition: 0.2s ease-out;
+  background-color: rgb(16, 16, 16);
+  color: rgb(255, 255, 255);
 }
 
 .filter:focus {
-  border-color: rgb(25, 94, 117);
+  background-color: rgb(255, 255, 255);
+  color: rgb(16, 16, 16);
 }
 
 .filter::placeholder {
