@@ -1,0 +1,84 @@
+.home {
+  position: relative;
+  background-image: url("https://images8.alphacoders.com/632/632051.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(100vh - 83px);
+  z-index: 1;
+}
+
+.home__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(16, 16, 16),
+    rgba(16, 16, 16, 0.1) 5%
+  );
+  z-index: 2;
+}
+
+.home__enter-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50px;
+  width: 125px;
+  background-color: rgba(0, 0, 0, 0.333);
+  border-radius: 25px;
+  transition: 0.3s ease;
+  z-index: 3;
+}
+
+.home__enter-button:hover {
+  background-color: rgba(0, 0, 0, 0.666);
+  box-shadow: 1px 1px 10px 1px rgb(122, 122, 122);
+}
+
+.home__enter-button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.888);
+  font-size: 18px;
+}
+
+.home__enter-button span:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  .home {
+    height: 25vh;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .home {
+    height: 40vh;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .home {
+    height: 50vh;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .home {
+    height: 60vh;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .home {
+    height: calc(100vh - 83px);
+  }
+}

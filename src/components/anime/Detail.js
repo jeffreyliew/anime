@@ -16,11 +16,11 @@ const Detail = props => {
 
   return (
     <div className="detail">
-      <div className="detail-background-image">
-        <div className="detail-overlay" />
+      <div className="detail__background-image">
+        <div className="detail__overlay" />
       </div>
       {anime && (
-        <div className="detail-content">
+        <div className="detail__content">
           <div className="detail__image-container">
             <Image src={anime.image_url} alt={anime.title} />
           </div>
@@ -46,7 +46,7 @@ const Detail = props => {
                 style={{
                   backgroundColor: "rgb(18, 97, 143)",
                   color: fontColor,
-                  borderRadius: "3%",
+                  borderRadius: "1px",
                   padding: "2px 10px",
                   left: "25px",
                   transform: "translate(0, -50%)"

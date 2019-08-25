@@ -13,12 +13,15 @@ export const Anime = props => {
   return (
     <div className="anime">
       <div className="anime__image-container">
-        <Link to={`/${mal_id}`} style={{ outline: "none", ...fontColor }}>
+        <Link to={`/anime/${mal_id}`} style={{ outline: "none", ...fontColor }}>
           <Image src={image_url} alt={title} />
         </Link>
       </div>
       <div className="anime__title-container">
-        <Link to={`/${mal_id}`} style={{ outline: "none" }}>
+        <Link
+          to={`/anime/${mal_id}`}
+          style={{ textDecoration: "none", outline: "none" }}
+        >
           <Title
             style={fontColor}
             title={title}
