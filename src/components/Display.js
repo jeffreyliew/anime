@@ -16,7 +16,7 @@ class Display extends Component {
     this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
-  // set order by user click
+  // changes the order of the content displayed
   handleOrderChange(newOrder) {
     const { order } = this.props;
     if (newOrder === order) {
@@ -25,7 +25,7 @@ class Display extends Component {
     this.props.dispatch(setOrder(newOrder));
   }
 
-  // filter anime by user input
+  // filter content by user input
   handleFilterChange(filter) {
     this.props.dispatch(setFilter(filter));
   }
@@ -58,7 +58,8 @@ class Display extends Component {
 
     // renders data, otherwise it shows a loading circle
     return (
-      <div>
+      <div className="display-container">
+        <div className="display-container__overlay" />
         {!loading ? (
           <div className="display">
             <div className="display__filter">
@@ -89,7 +90,7 @@ class Display extends Component {
             <BackToTop scroll={250} delay={13} showAt={410} />
           </div>
         ) : (
-          <div className="container-loader">
+          <div className="loader-container">
             <div className="loader" />
             <h2>Loading...</h2>
           </div>
