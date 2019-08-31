@@ -1,7 +1,5 @@
 ## My First App
 
-Fetches JSON from a REST API and renders it with React. You can sort it by score and filter the data by user input. It is responsive.
-
 In the project directory, you can run:
 
 ### `npm start`
