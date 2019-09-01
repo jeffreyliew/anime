@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/anime/static/css/main.a8a14c16.chunk.css",
-    "main.js": "/anime/static/js/main.305ff18c.chunk.js",
-    "main.js.map": "/anime/static/js/main.305ff18c.chunk.js.map",
+    "main.js": "/anime/static/js/main.e380f368.chunk.js",
+    "main.js.map": "/anime/static/js/main.e380f368.chunk.js.map",
     "runtime~main.js": "/anime/static/js/runtime~main.a0709b55.js",
     "runtime~main.js.map": "/anime/static/js/runtime~main.a0709b55.js.map",
     "static/js/2.724f9bd3.chunk.js": "/anime/static/js/2.724f9bd3.chunk.js",
     "static/js/2.724f9bd3.chunk.js.map": "/anime/static/js/2.724f9bd3.chunk.js.map",
     "index.html": "/anime/index.html",
-    "precache-manifest.c878ec4e910e1d98959288505a49095b.js": "/anime/precache-manifest.c878ec4e910e1d98959288505a49095b.js",
+    "precache-manifest.3266c6187f63f94194ea0ea61ce76aa7.js": "/anime/precache-manifest.3266c6187f63f94194ea0ea61ce76aa7.js",
     "service-worker.js": "/anime/service-worker.js",
     "static/css/main.a8a14c16.chunk.css.map": "/anime/static/css/main.a8a14c16.chunk.css.map"
   }
