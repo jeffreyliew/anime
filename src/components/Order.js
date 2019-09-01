@@ -17,7 +17,7 @@ class Order extends Component {
   render() {
     const { order } = this.props;
     return (
-      <div className="order-dropdown">
+      <div className="order-dropdown" onClick="">
         <i className="fas fa-sort fa-2x" />
         <div className="order-dropdown__content">
           <div
