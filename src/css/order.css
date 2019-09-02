@@ -2,6 +2,7 @@
   position: relative;
   width: 20px;
   margin: 10px;
+  cursor: pointer;
 }
 
 .order-dropdown i {
@@ -14,8 +15,7 @@
   right: 0%;
   width: 130px;
   z-index: 10;
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   transition: 0.2s;
 }
 
@@ -53,9 +53,4 @@
 
 .order-dropdown__content .active {
   color: rgb(86, 169, 247);
-}
-
-.order-dropdown:hover .order-dropdown__content {
-  visibility: visible;
-  opacity: 1;
 }

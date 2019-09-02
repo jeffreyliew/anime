@@ -7,6 +7,10 @@ class Order extends Component {
   constructor(props) {
     super(props);
     this.onOrderChange = this.onOrderChange.bind(this);
+    this.toggleHide = this.toggleHide.bind(this);
+    this.state = {
+      hidden: true
+    };
   }
 
   // invoke onClick to set order
@@ -14,12 +18,19 @@ class Order extends Component {
     this.props.onClick(e.target.textContent.replace(/\s/g, ""));
   }
 
+  toggleHide() {
+    this.setState({ hidden: !this.state.hidden });
+  }
+
   render() {
     const { order } = this.props;
     return (
-      <div className="order-dropdown">
+      <div className="order-dropdown" onClick={this.toggleHide}>
         <i className="fas fa-sort fa-2x" />
-        <div className="order-dropdown__content">
+        <div
+          className="order-dropdown__content"
+          style={this.state.hidden ? {} : { display: "block" }}
+        >
           <div
             className={`order-dropdown__btn ${
               order === "Default" ? "active" : ""
