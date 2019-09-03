@@ -15,11 +15,11 @@ class Order extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener("click", this.handleOutsideClick);
+    document.addEventListener("click", this.handleOutsideClick);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("click", this.handleOutsideClick);
+    document.removeEventListener("click", this.handleOutsideClick);
   }
 
   // invoke onClick to set order
@@ -35,10 +35,7 @@ class Order extends Component {
 
   handleOutsideClick(e) {
     e.stopPropagation();
-    if (
-      this.dropdown === e.target ||
-      e.target.className.indexOf("order-dropdown__btn") !== -1
-    ) {
+    if (this.dropdown.contains(e.target)) {
       return;
     }
     this.setState({ hidden: true });
@@ -47,11 +44,12 @@ class Order extends Component {
   render() {
     const { order } = this.props;
     return (
-      <div className="order-dropdown" onClick={this.toggleHide}>
-        <i
-          className="fas fa-sort fa-2x"
-          ref={dropdown => (this.dropdown = dropdown)}
-        />
+      <div
+        className="order-dropdown"
+        onClick={this.toggleHide}
+        ref={dropdown => (this.dropdown = dropdown)}
+      >
+        <i className="fas fa-sort fa-2x" />
         <div
           className="order-dropdown__content"
           style={this.state.hidden ? {} : { display: "block" }}
