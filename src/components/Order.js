@@ -15,11 +15,11 @@ class Order extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener("mousedown", this.handleOutsideClick);
+    document.addEventListener("click", this.handleOutsideClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleOutsideClick);
+    document.removeEventListener("click", this.handleOutsideClick);
   }
 
   // invoke onClick to set order
