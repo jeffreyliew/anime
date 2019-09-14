@@ -35,7 +35,8 @@ class Order extends Component {
 
   handleOutsideClick(e) {
     e.stopPropagation();
-    if (this.dropdown.contains(e.target)) {
+    const { hidden } = this.state;
+    if ((this.dropdown.contains(e.target) && hidden === false) || hidden) {
       return;
     }
     this.setState({ hidden: true });
